@@ -1,0 +1,103 @@
+﻿<Page
+    x:Class="HEART.Views.Profile_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestHeart002"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="#FFFFFFFF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="251*"/>
+            <RowDefinition Height="69*"/>
+        </Grid.RowDefinitions>
+
+
+        <Rectangle Fill="Black" Margin="0,-147,0,566.667" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <CompositeTransform ScaleY="-1"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <Rectangle Fill="Black" Margin="0,689,0,-269.333" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <CompositeTransform ScaleY="-1"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <TextBlock HorizontalAlignment="Left" Foreground="Aqua" TextWrapping="Wrap" 
+    		Text="Personal Help Profile" VerticalAlignment="Top" Height="43" Width="400" 
+    		RequestedTheme="Dark" FontSize="24"/>
+
+
+        <!--The retractable elements of the UI-->
+        <TextBlock HorizontalAlignment="Left" Margin="0,362,0,0" Foreground="Black"
+        	TextWrapping="Wrap" Text="Medication" VerticalAlignment="Top" 
+        	FontSize="18" Height="28" Width="400" Tapped="TextBlock_Tapped"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,306,0,0" Foreground="Black"
+    		TextWrapping="Wrap" Text="Medical Condition" VerticalAlignment="Top" 
+    		FontSize="18" Height="28" Width="400" Tapped="TextBlock_Tapped" RequestedTheme="Dark"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,334,0,0" Foreground="Black"
+    		TextWrapping="Wrap" Text="Assistance Needed" VerticalAlignment="Top" 
+    		FontSize="18" Height="28" Width="173" Tapped="TextBlock_Tapped"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,390,0,0" Foreground="Black"
+        	TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" 
+        	FontSize="18" Height="28" Width="400" Tapped="TextBlock_Tapped"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,418,0,0" Foreground="Black"
+        	TextWrapping="Wrap" Text="Activation Time" VerticalAlignment="Top" 
+        	FontSize="18" Height="28" Width="400" Tapped="TextBlock_Tapped"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="77,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="114" BorderThickness="5" RequestedTheme="Dark" Background="White" Foreground="Black" BorderBrush="Blue"/>
+        <ComboBox HorizontalAlignment="Left" Margin="82,145,0,0" VerticalAlignment="Top" Width="109" PlaceholderText="Select from the list" IsSynchronizedWithCurrentItem="False" RequestedTheme="Dark" Height="181" Background="Black" Foreground="White" BorderBrush="Blue" BorderThickness="5">
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="Not Specified"/>
+            <DatePicker HorizontalAlignment="Left" Margin="84,0,0,0"/>
+        </ComboBox>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,101,0,0" Foreground="Black"
+    		TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" 
+    		FontSize="18" Height="28" Width="62"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,166,0,0" Foreground="Black"
+    		TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Top" 
+    		FontSize="18" Height="28" Width="108"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,231,0,0" Foreground="Black"
+    		TextWrapping="Wrap" Text="DOB:" VerticalAlignment="Top" 
+    		FontSize="18" Height="28" Width="62"/>
+        <DatePicker HorizontalAlignment="Left" Margin="82,210,0,0" VerticalAlignment="Top" Width="109" Foreground="#FF1D0303"/>
+
+
+        <!--The retractable elements of the UI-->
+        <StackPanel x:Name="stackMedicalCondition"  HorizontalAlignment="Left" Height="100" 
+        Margin="0,334,0,0" VerticalAlignment="Top" Width="400" Background="Gray" 
+        Visibility="Collapsed" >
+            <RichEditBox Margin="0" VerticalAlignment="Stretch"  Height="100" BorderThickness="5,2.5,5,5"/>
+        </StackPanel>
+        <StackPanel x:Name="stackAssistNeeded"  HorizontalAlignment="Left" Height="119" 
+                    Margin="0,362,0,0" VerticalAlignment="Top" Width="400" 
+                    Background="Gray" Visibility="Collapsed">
+            <CheckBox x:Name="cbDefib" Content="Defibrulator" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,232,0" Height="60" BorderThickness="1"/>
+            <CheckBox x:Name="cbCPR" Content="CPR" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,261,0" BorderThickness="1"/>
+        </StackPanel>
+        <StackPanel x:Name="stackMedication"  HorizontalAlignment="Left" Height="100" 
+                    Margin="0,381,0,0" VerticalAlignment="Top" Width="400" Background="Gray" Visibility="Collapsed">
+            <RichEditBox Margin="0" VerticalAlignment="Stretch" Height="74" BorderThickness="5,2.5,5,5" Visibility="Visible"/>
+        </StackPanel>
+        <StackPanel x:Name="stackMessage"  HorizontalAlignment="Left" Height="100" 
+                    Margin="0,418,0,0" VerticalAlignment="Top" Width="400" Background="Gray" Visibility="Collapsed" Grid.RowSpan="2">
+            <RichEditBox x:Name="rtbMessage" VerticalAlignment="Stretch" Height="74" BorderThickness="5,2.5,5,5" Visibility="Visible" Margin="0"/>
+        </StackPanel>
+
+        <StackPanel x:Name="stackActivationTime"  HorizontalAlignment="Left" Height="100" Margin="0,446,0,0" VerticalAlignment="Top" Width="400" Background="Gray" Visibility="Collapsed" Grid.RowSpan="2">
+            <Slider x:Name="slideActivationTime" Minimum="0" Maximum="30" ValueChanged="slideActivationTime_ValueChanged" />
+            <TextBlock x:Name="txtActiveTimeValue" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Center" FontSize="24" Margin="151,0,150,0"/>
+        </StackPanel>
+
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.732,-0.283" Background="Gray" Margin="82,80.333,0,0" Grid.Row="1"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="btnCancel_Tapped" Background="Gray" Margin="216,80.333,0,0" Grid.Row="1"/>
+
+
+    </Grid>
+</Page>
