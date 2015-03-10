@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="HEART.Views.CPRInstructions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HEART.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White">
+        <Grid x:Name="TopGrid" Background="Black" HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" Margin="0,0,0,618">
+            <TextBlock Text="CPR Guide" FontSize="32" HorizontalAlignment="Center" Width="157" Foreground="White" Margin="233,10,10,20"/>
+            <Image Source="ms-appx:///Assets/ic_logo.scale-240.png" Height="66" 
+             HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+
+        <Grid VerticalAlignment="Bottom" Margin="0,0,0,74">
+            <Image Source="ms-appx:///Assets/CPRgraphic.jpg" VerticalAlignment="Center"></Image>
+        </Grid>
+
+        <Grid x:Name="BottomGrid" Background="Black" Margin="0,720,0,0">
+
+            <Image  Margin="0,2,225,0" Width="177" Height="64"/>
+
+        </Grid>
+        <!--<WebView Name="webVideo" HorizontalAlignment="Center" Visibility="Visible" Height="263" Margin="0,126,0,0" VerticalAlignment="Top" Width="400"/>-->
+
+        <Border BorderBrush="Black"  BorderThickness="2">
+            <MediaElement Name="videoTourMediaElement" Height="263" Margin="0,126,0,0" AutoPlay="True" AreTransportControlsEnabled="True" 
+              Width="400" IsFullWindow="False" VerticalAlignment="Top" Source="ms-appx:///Assets/CPR_Instruction.mp4"/>
+        </Border>
+
+    </Grid>
+</Page>
+
+

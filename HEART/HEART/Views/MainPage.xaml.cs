@@ -15,8 +15,11 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
+
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Shapes;
 using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.Rfcomm;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
@@ -38,6 +41,7 @@ namespace HEART
 {
     public sealed partial class MainPage : Page
     {
+        
         public static string strCurrentDisplay = "---";
         private bool IsOn = false;
         private bool IsNavToIncidents = false;
@@ -45,14 +49,12 @@ namespace HEART
         private StackPanel stack;
         private Popup pop;
         private IReadOnlyList<PeerInformation> listPeers;
-        private Button btn;
 
         private bool bIsSuccess;
 
         public MainPage()
         {
             this.InitializeComponent();
-
 
             blkHeartRate.Text = strCurrentDisplay;
 
@@ -71,13 +73,13 @@ namespace HEART
         }
 
 
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // TODO: Prepare page for display here.
-            if (bMockIsActive)
-            {
-                blkHeartRate.Text = await Task.Run(() => SvcManager.UpdateHeartRate());
-            }
+            //if (bMockIsActive)
+            //{
+            //    blkHeartRate.Text = await Task.Run(() => SvcManager.UpdateHeartRate());
+            //}
 
             Image img = imgIncident;
 
@@ -184,12 +186,15 @@ namespace HEART
                     stack = new StackPanel();
 
                     TextBlock header = new TextBlock();
-                    header.Text = "Select a Heart monitor device to start the app:";
-                    header.FontSize = 18;
+                    header.Text = "Select a Heart monitor device:";
+                    header.FontSize = 24;
 
                     //  SolidColorBrush colBrush = new SolidColorBrush(Windows.UI.Colors.Black)
-                    stack.Background = new SolidColorBrush(Windows.UI.Colors.BlanchedAlmond);
+
+                    stack.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Center;
+                    stack.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(240, 0, 0, 0));
                     stack.Children.Add(header);
+                    stack.Margin = new Thickness(0, 120, 0, 60);
 
                     RadioButton radioMockData = new RadioButton();
                     radioMockData.Content = "Mock Data";
@@ -201,6 +206,7 @@ namespace HEART
                     for (int i = 0; i < listPeers.Count; ++i)
                     {
                         RadioButton radioEntry = new RadioButton();
+                        radioEntry.FontSize = 18;
                         radioEntry.Content = listPeers[i].DisplayName;
                         radioEntry.GroupName = "Select Heart Monitor";
                         radioEntry.Checked += RadioButton_Checked;
@@ -209,7 +215,7 @@ namespace HEART
                     }
 
                     pop.Child = stack;
-                    pop.Margin = new Thickness(44, 264, 36, 150);
+                   // pop.Margin = new Thickness(44, 264, 36, 150);
                     pop.Visibility = Windows.UI.Xaml.Visibility.Visible;
                     pop.IsOpen = true;
                 }
@@ -223,9 +229,12 @@ namespace HEART
             else
             {
                 // Shut down mock data
+                GraphLine.Points.Clear();
+                dispatcherTimer.Stop();
                 blkHeartRate.Text = "---";
                 blkAvgHeartBeat.Text = "Average Heart Rate: ---";
                 SvcManager.Reset();
+
                 // Discontinue any background tasks
                 foreach (KeyValuePair<System.Guid, Windows.ApplicationModel.Background.IBackgroundTaskRegistration> o in BackgroundTaskRegistration.AllTasks)
                 {
@@ -238,24 +247,23 @@ namespace HEART
         private void btnProfile_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Profile_Page));
-            //this.Frame.Navigate(typeof(Incident_Log));
         }
 
         private void btnIncidentLog_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Image img = (Image)sender;
+            //Image img = (Image)sender;
 
-            string strHeartOn = @"ms-appx:///Assets/ic_recent_incidents.png";
-            string strHeartOff = @"ms-appx:///Assets/ic_recent_incidents_bg.png";
+            //string strHeartOn = @"ms-appx:///Assets/ic_recent_incidents.png";
+            //string strHeartOff = @"ms-appx:///Assets/ic_recent_incidents_bg.png";
 
-            // Invert bool flag
-            IsNavToIncidents = !IsNavToIncidents;
+            //// Invert bool flag
+            //IsNavToIncidents = !IsNavToIncidents;
 
-            // Alt button state
-            string uriString = IsNavToIncidents ? strHeartOn : strHeartOff;
-            img.Source = new BitmapImage(new Uri(uriString));
+            //// Alt button state
+            //string uriString = IsNavToIncidents ? strHeartOn : strHeartOff;
+            //img.Source = new BitmapImage(new Uri(uriString));
 
-            this.Frame.Navigate(typeof(Incident_Log));
+            this.Frame.Navigate(typeof(IncidentLog));
         }
 
         #endregion
@@ -307,7 +315,7 @@ namespace HEART
                         MessageDialog m = new MessageDialog(listPeers[i].DisplayName + " failed to connect.");
                         await m.ShowAsync();
 
-                        Image img = (Image)(btn.ContentTemplateRoot as StackPanel).Children[0];
+                        Image img = null;
 
                         IsOn = false;
                         string strHeartOff = @"ms-appx:///Assets/ic_main_screen_on_off_off.png";
@@ -321,7 +329,7 @@ namespace HEART
                 // Mock Data
                 else if (((RadioButton)sender).Content.ToString().Contains("Mock"))
                 {
-                    blkHeartRate.Text = await Task.Run(() => SvcManager.UpdateHeartRate());
+                    //blkHeartRate.Text = await Task.Run(() => SvcManager.UpdateHeartRate());
                     DispatcherTimerSetup();
                     bMockIsActive = true;
 
@@ -343,9 +351,6 @@ namespace HEART
 
         #region Timer
         DispatcherTimer dispatcherTimer;
-        DateTimeOffset startTime;
-        DateTimeOffset lastTime;
-        DateTimeOffset time;
 
         public void DispatcherTimerSetup()
         {
@@ -353,32 +358,126 @@ namespace HEART
             dispatcherTimer.Tick += dispatcherTimer_TickEvent;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
 
-            //IsEnabled defaults to false
-            startTime = DateTimeOffset.Now;
-            lastTime = startTime;
+            var ttv = GraphLine.TransformToVisual(Window.Current.Content);
+            Point screenCoords = ttv.TransformPoint(new Point(0, 0));
+            GraphLine.Points.Add(screenCoords);
 
+            iGraphPlotter = 0;
+            GraphLine.Points.Clear();
             dispatcherTimer.Start();
-            //IsEnabled should now be true after calling start
         }
+
+        byte iFlash = 255;
+        int iTimer = 0;
+        int iGraphPlotter = 0;
+
+
+        int iMax = 240;
+        int iMin = 40;
+        int iChange = 10000000;
 
         public void dispatcherTimer_TickEvent(object sender, object e)
         {
+            dispatcherTimer.Stop();
             // Event Logic. . .
-            blkHeartRate.Text = SvcManager.UpdateHeartRate();
-            blkAvgHeartBeat.Text = "Average Heart Beat: " + SvcManager.UpdateAvg();
+            int iPrev = 0;
+            int iDelta = 0;
 
-            // Algorithm
-
-            // Result
-            if(true)
+            if (!int.TryParse(blkHeartRate.Text, out iPrev))
             {
-                Incident_Log.CreateLogEntry(new Incident(DateTime.Now, int.Parse(blkHeartRate.Text), eClassification.LOW));
+                iPrev = 0;
             }
+
+            blkHeartRate.Text = SvcManager.UpdateHeartRate();
+            int iAvg = SvcManager.UpdateAvg();
+            blkAvgHeartBeat.Text = "Average Heart Beat: " + iAvg.ToString();
+
+            double iHeartRate = double.Parse(blkHeartRate.Text);
+            iDelta = (int)iHeartRate - iPrev;
+
+            double dStart = 200;
+            double dStep = (double)(gridGraph.Width / 10);
+
+            if(GraphLine.Points.Count > 10)
+            {
+                GraphLine.Points.Clear();
+                iGraphPlotter = 0;
+            }
+
+            ++iGraphPlotter;
+            GraphLine.Points.Add(new Point(dStart - (dStep * iGraphPlotter), dStart - iHeartRate));
+
+
+
+            //GraphLine.Points.Insert(0, new Point(dStart - (dStep * iGraphPlotter), dStart - iHeartRate));
+            //for (int i = 0; i < GraphLine.Points.Count; ++i)
+            //{
+            //    Point p = new Point(GraphLine.Points[i].X - 20 * i, GraphLine.Points[i].Y);
+            //    GraphLine.Points[i] = p;
+            //}
+
             
-            // Update timer
-            time = DateTimeOffset.Now;
-            TimeSpan span = time - lastTime;
-            lastTime = time;
+            // Algorithm
+            AlertFunc((int)iHeartRate, iAvg, iDelta);
+
+            dispatcherTimer.Start();
+        }
+
+        int iDelayTime = 15;
+        int iHighCount = 0;
+
+        private void AlertFunc(int iHeartRate, int _iAvg, int iDelta)
+        {
+            // Trigger the warning page
+            bool bIsTriggered = ((_iAvg >= iMax) || (_iAvg <= iMin) || (iDelta >= iChange) || (iDelta <= -iChange));
+            bool bIsModerate = ((iHeartRate >= iMax) || (iHeartRate <= iMin) || (iDelta >= iChange) || (iDelta >= 7) || (iDelta <= -7));
+            bool bIsMinor = (iDelta >= 5) || (iDelta <= -5);
+
+            eClassification eClass = eClassification.INVALID;
+
+            if (bIsTriggered)
+            {
+                eClass = eClassification.HIGH;
+                ++iHighCount;
+            }
+            else
+            {
+                eClass = bIsModerate ? eClassification.MEDIUM : eClass = bIsMinor ? eClass = eClassification.LOW : eClass = eClassification.INVALID;
+                iHighCount = (iHighCount > 0) ? --iHighCount : iHighCount = 0;
+            }
+
+            if(eClass != eClassification.INVALID)
+            {
+                IncidentLog.CreateLogEntry(new Incident(DateTime.Now, iHeartRate, eClass));
+            }
+
+            if (iHighCount > 5 && DelayAlertGrid.Visibility == Windows.UI.Xaml.Visibility.Collapsed && 
+                EmergencyAlertGrid.Visibility == Windows.UI.Xaml.Visibility.Collapsed && AssistanceGrid.Visibility == Windows.UI.Xaml.Visibility.Collapsed)
+            {
+                DelayAlertGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+
+            // Start the delay timer
+            if (DelayAlertGrid.Visibility == Windows.UI.Xaml.Visibility.Visible)
+            {
+                ++iTimer;
+                bgFlash.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(125, iFlash, 0, 0));
+            }
+            else
+            {
+                // Reset if cancelled
+                iTimer = 0;
+            }
+
+            // Assist screen
+            // TODO: Trigger cloud functionality
+            if (iTimer == iDelayTime)
+            {
+                iTimer = 0;
+
+                DelayAlertGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                EmergencyAlertGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
         }
 
         public void Stop()
@@ -386,6 +485,52 @@ namespace HEART
             dispatcherTimer.Stop();
         }
         #endregion
+
+        private void btnCancelAlert_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            DelayAlertGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+
+        private void btnAssist_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnCPR_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CPRInstructions));
+        }
+
+        private void btnAED_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AEDLocator));
+        }
+
+        private void btnAssist_Click(object sender, RoutedEventArgs e)
+        {
+            AssistanceGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            EmergencyAlertGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            iMax = 240;
+            iMin = 40;
+            iChange = 1;
+        }
+
+        private void Image_Tapped_1(object sender, TappedRoutedEventArgs e)
+        {
+            iMax = 400;
+            iMin = 0;
+            iChange = 1000;
+        }
+
+        private void btnExit_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            AssistanceGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
 
     }
 
@@ -405,13 +550,15 @@ namespace HEART
         {
             // 240 = approx mock read for a 250 bpm 
             // 706 = approx mock read for a xxx bpm
+            int iMinMockRate = 62;
+            int iMaxMockRate = 102;
 
-            int i = r.Next(240, 706);
+            int i = r.Next(iMinMockRate, iMaxMockRate);
 
             ++iCount;
-            iTotal += (60000 / i);
+            iTotal += i;
 
-            return (60000 / i).ToString();
+            return i.ToString();
         }
 
 

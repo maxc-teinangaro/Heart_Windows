@@ -1,0 +1,153 @@
+﻿<Page
+    x:Class="HEART.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HEART"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <!--<Grid HorizontalAlignment="Left" Margin="0,0.333,0,-0.333" RenderTransformOrigin="0.0,0.0" Background="#FFFFFFFF" Width="400">-->
+    <!--
+    Margin="288,6,0,10"
+    Margin="0,71,0,547"
+    -->
+    <Grid Background="#FFFFFFFF">
+
+        <Grid Name="TopGrid" Background="Black" HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" Margin="0,0,0,618">
+            <Image x:ConnectionId='10' Name="imgProfile" Source="ms-appx:///Assets/ic_personal_profile.png"
+                       Width="59" Height="62"
+                       HorizontalAlignment="Right" 
+                                                 />
+
+            <Image Source="ms-appx:///Assets/ic_logo.scale-240.png" Height="66" 
+             HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+
+        <Border Margin="0,-60,0,60">
+            <TextBox IsReadOnly="True" x:Name="blkHeartRate" Margin="10,222,10,0" TextWrapping="Wrap" 
+        		Text="84" VerticalAlignment="Top" HorizontalAlignment="Center"
+        		RenderTransformOrigin="0,0" FontSize="164" TextAlignment="Center" Foreground="Black" 
+        		BorderThickness="0" Height="191" Width="380" />
+        </Border>
+
+        <Grid Name="MidGrid"  HorizontalAlignment="Stretch" Margin="0,55,0,560">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"  />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image x:ConnectionId='8' Source="ms-appx:///Assets/al_SleepMode.jpg" 
+              Grid.Column="2"  Grid.Row="0"                      
+              />
+            <Image Source="ms-appx:///Assets/al_ExerciseMode.jpg" 
+             Grid.Column="0" Grid.Row="0"
+              />
+            <Image x:ConnectionId='9' Source="ms-appx:///Assets/al_NormalMode.jpg"
+             Grid.Column="1" Grid.Row="0"                        
+                />
+        </Grid>
+
+        <TextBlock x:Name="blkAvgHeartBeat" HorizontalAlignment="Center" Margin="96,368,88,0" 
+                   TextWrapping="Wrap" Text="Average Heart Rate: ---" Foreground="Gray"
+                   VerticalAlignment="Top" RenderTransformOrigin="0,0" FontSize="20" Width="216"
+                   SelectionHighlightColor="#FFFFFFFF" />
+
+        <Grid Name="BottomGrid" Background="Black" Margin="0,720,0,0">
+            <Image x:ConnectionId='6' Name="imgSwitchDevice" Source="ms-appx:///Assets/ic_main_screen_on_off_off.png" 
+                   Margin="0,2,225,0"                                
+                   Width="177" Height="64"/>
+
+            <Border BorderThickness="10,0,0,0" BorderBrush="White" HorizontalAlignment="Right" Margin="309,0,-3.222,0" Width="97" Grid.ColumnSpan="3">
+                <Image x:ConnectionId='7' Name="imgIncident" Source="ms-appx:///Assets/ic_recent_incidents.png" Margin="2,0,10.222,0.111" 
+                       Width="66" Height="82"
+            		                              />
+
+            </Border>
+        </Grid>
+
+
+        <Grid Visibility="Visible"  Name="gridGraph" Background="#7FBBB8B8" HorizontalAlignment="Stretch"   Margin="0,447,0,62" Width="400">
+            <Polyline Name="GraphLine" Stroke="Red" StrokeThickness="3" HorizontalAlignment="Right"/>
+            <!--<Rectangle Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2" Fill="Aquamarine" >
+                </Rectangle>-->
+        </Grid>
+
+        <Border Name="DelayAlertGrid" Visibility="Collapsed" BorderBrush="Black" Margin="0,-178,0,178">
+            <Grid>
+                <Grid Name="bgFlash" Background="#55FF0000" Margin="0,0,0,-176">
+
+                </Grid>
+                <Grid Background="Red" Margin="0,342,0,300">
+                    <TextBlock Text="ALERT!" HorizontalAlignment="Center" FontSize="32" />
+                </Grid>
+                <Grid Background="White" Margin="0,384,0,179">
+                    <TextBlock Foreground="Black" TextWrapping="Wrap" Text="We have detected a dangerous heart rhythm. Do you require attention?" HorizontalAlignment="Center" FontSize="24" />
+                </Grid>
+                <Button x:ConnectionId='5' Name="btnCancelAlert"  Foreground="Black" Background="IndianRed"  Content="NO" Margin="147,457,0,141" 
+                        RenderTransformOrigin="0.492,1.509" Height="86" Width="132"
+                                                      ></Button>
+            </Grid>
+        </Border>
+        <Border Name="EmergencyAlertGrid"  Visibility="Collapsed" BorderBrush="Black" Margin="0,-178,0,178">
+            <Grid Margin="0,10,0,-10.111">
+                <Grid Name="bgAlarmFlash" Background="#55FF0000" Margin="0,0,0,-176">
+
+                </Grid>
+                <Grid Background="Red" Margin="0,342,0,300">
+                    <TextBlock Text="ALERT!" HorizontalAlignment="Center" FontSize="32" />
+                </Grid>
+                <Grid Background="White" Margin="0,384,0,179">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="11*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="Black" TextWrapping="Wrap"
+                     Text="I have a Heart Condition, and am suffering from cardiac arrest. An ambulance is on its way. Please touch the Assist button to help me." HorizontalAlignment="Center" FontSize="24" Margin="3,0,2,-45" Grid.ColumnSpan="2" />
+                </Grid>
+                <Button x:ConnectionId='4' Name="btnAssist" Foreground="Black" Background="GreenYellow" Content="Assist" Margin="147,457,0,141" 
+                        RenderTransformOrigin="0.492,1.509"                           Height="86" Width="132"                        ></Button>
+
+            </Grid>
+        </Border>
+        <Border Name="AssistanceGrid" Visibility="Collapsed" BorderBrush="Black" Margin="0,-178,0,178">
+            <Grid Margin="0,10,0,-10.111">
+                <Grid Background="#55FF0000" Margin="0,0,0,-122" Height="663" VerticalAlignment="Bottom">
+
+                </Grid>
+                <Grid Background="Red" Margin="0,342,0,300">
+                    <TextBlock Text="ASSISTANCE" HorizontalAlignment="Center" FontSize="32" />
+                </Grid>
+                <Grid Background="White" Margin="0,384,0,107">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="11*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="Black" TextWrapping="Wrap"
+                     Text="Options to Assist:" HorizontalAlignment="Center" FontSize="24" Margin="118,37,9.222,-82" />
+                </Grid>
+                <Button x:ConnectionId='1' Name="btnCPR" Foreground="Black" Background="GreenYellow" Content="CPR Instructions" Margin="10,428,0,170" 
+                       HorizontalAlignment="Center" RenderTransformOrigin="0.492,1.509"                           Height="86" Width="243"                     ></Button>
+
+                <Button x:ConnectionId='2' Name="btnAED" Foreground="Black" Background="GreenYellow" Content="Find Closest Defibrillator" Margin="10,500,0,98" 
+                        HorizontalAlignment="Center" RenderTransformOrigin="0.492,1.509"                           Height="86" Width="243"                     ></Button>
+
+                <Button x:ConnectionId='3' Name="btnExit"  Foreground="Black" Background="IndianRed"  Content="Exit" Margin="148,635,0,-37" 
+                        RenderTransformOrigin="0.492,1.509" Height="86" Width="132"                        />
+            </Grid>
+        </Border>
+
+
+    </Grid>
+
+
+</Page>
+
+

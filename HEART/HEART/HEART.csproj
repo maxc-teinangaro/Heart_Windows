@@ -83,8 +83,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Incident.cs" />
-    <Compile Include="Views\Incident_Log.xaml.cs">
-      <DependentUpon>Incident_Log.xaml</DependentUpon>
+    <Compile Include="Data\IncidentList.cs" />
+    <Compile Include="Views\AEDLocator.xaml.cs">
+      <DependentUpon>AEDLocator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CPRInstructions.xaml.cs">
+      <DependentUpon>CPRInstructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IncidentLog.xaml.cs">
+      <DependentUpon>IncidentLog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -103,6 +110,44 @@
     <Content Include="Assets\al_ExerciseMode.jpg" />
     <Content Include="Assets\al_NormalMode.jpg" />
     <Content Include="Assets\al_SleepMode.jpg" />
+    <Content Include="Assets\CPRgraphic.jpg" />
+    <Content Include="Assets\CPR_Instruction.mp4" />
+    <Content Include="Assets\Icons\AmberIncident.png" />
+    <Content Include="Assets\Icons\AverageHeartRate.png" />
+    <Content Include="Assets\Icons\AverageHeartRate_nonumber.png" />
+    <Content Include="Assets\Icons\BackButtonIcon.png" />
+    <Content Include="Assets\Icons\BackButtonIconBG.png" />
+    <Content Include="Assets\Icons\ExerciseMode.jpg" />
+    <Content Include="Assets\Icons\GreenIncident.png" />
+    <Content Include="Assets\Icons\LogoIcon.png" />
+    <Content Include="Assets\Icons\LogoIconBG.png" />
+    <Content Include="Assets\Icons\MainScreenModes.jpg" />
+    <Content Include="Assets\Icons\MainScreenONOFF_Off.png" />
+    <Content Include="Assets\Icons\MainScreenONOFF_On.png" />
+    <Content Include="Assets\Icons\MainScreen_HRLabel.png" />
+    <Content Include="Assets\Icons\NormalMode.jpg" />
+    <Content Include="Assets\Icons\PersonalProfileIcon.png" />
+    <Content Include="Assets\Icons\PersonalProfileIconBG.png" />
+    <Content Include="Assets\Icons\PHPBirthdateArrowIcon.png" />
+    <Content Include="Assets\Icons\PHPCancelButtonNew.png" />
+    <Content Include="Assets\Icons\PHPIcon1.png" />
+    <Content Include="Assets\Icons\PHPIcon2.png" />
+    <Content Include="Assets\Icons\PHPIcon3.png" />
+    <Content Include="Assets\Icons\PHPIcon4.png" />
+    <Content Include="Assets\Icons\PHPIcon5.png" />
+    <Content Include="Assets\Icons\PHPMenuArrowSelected.png" />
+    <Content Include="Assets\Icons\PHPMenuArrowSelectedV2.png" />
+    <Content Include="Assets\Icons\PHPMenuArrowUnselected.png" />
+    <Content Include="Assets\Icons\PHPSaveButton.png" />
+    <Content Include="Assets\Icons\PHPUploadPicture.png" />
+    <Content Include="Assets\Icons\RecentIncidentsIcon.png" />
+    <Content Include="Assets\Icons\RecentIncidentsIconBG.png" />
+    <Content Include="Assets\Icons\RecentIncidents_DAY.png" />
+    <Content Include="Assets\Icons\RecentIncidents_DayWeekMonth.png" />
+    <Content Include="Assets\Icons\RecentIncidents_MONTH.png" />
+    <Content Include="Assets\Icons\RecentIncidents_WEEK.png" />
+    <Content Include="Assets\Icons\RedIncident.png" />
+    <Content Include="Assets\Icons\SleepMode.jpg" />
     <Content Include="Assets\icon_right_triangle.png" />
     <Content Include="Assets\ic_back_button.png" />
     <Content Include="Assets\ic_back_button_bg.png" />
@@ -131,8 +176,11 @@
     <Content Include="Assets\ic_upload_photo.png" />
     <Content Include="Assets\Logo.scale-240.png" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
+    <Content Include="Assets\SplashScreen.scale-100.jpg" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.jpg" />
     <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-240.jpg" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
     <Content Include="Assets\Square71x71Logo.scale-240.png" />
     <Content Include="Assets\StoreLogo.scale-240.png" />
@@ -145,7 +193,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\Incident_Log.xaml">
+    <Page Include="Views\AEDLocator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CPRInstructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IncidentLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

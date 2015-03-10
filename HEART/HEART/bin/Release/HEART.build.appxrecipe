@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SAMSUNG</Machine>
+    <WindowsUser>user</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>a7d5fd5d-cb48-44b2-89e5-96b327e0f22c</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\obj\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\HEART.exe">
+      <PackagePath>HEART.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit.dll">
+      <PackagePath>WinRTXamlToolkit.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\al_ExerciseMode.jpg">
+      <PackagePath>Assets\al_ExerciseMode.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\al_NormalMode.jpg">
+      <PackagePath>Assets\al_NormalMode.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\al_SleepMode.jpg">
+      <PackagePath>Assets\al_SleepMode.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\CPRgraphic.jpg">
+      <PackagePath>Assets\CPRgraphic.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\ExerciseMode.jpg">
+      <PackagePath>Assets\Icons\ExerciseMode.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\MainScreenModes.jpg">
+      <PackagePath>Assets\Icons\MainScreenModes.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\NormalMode.jpg">
+      <PackagePath>Assets\Icons\NormalMode.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\SleepMode.jpg">
+      <PackagePath>Assets\Icons\SleepMode.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SplashScreen.scale-100.jpg">
+      <PackagePath>Assets\SplashScreen.scale-100.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SplashScreen.scale-140.jpg">
+      <PackagePath>Assets\SplashScreen.scale-140.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SplashScreen.scale-240.jpg">
+      <PackagePath>Assets\SplashScreen.scale-240.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\CPR_Instruction.mp4">
+      <PackagePath>Assets\CPR_Instruction.mp4</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\AmberIncident.png">
+      <PackagePath>Assets\Icons\AmberIncident.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\AverageHeartRate.png">
+      <PackagePath>Assets\Icons\AverageHeartRate.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\AverageHeartRate_nonumber.png">
+      <PackagePath>Assets\Icons\AverageHeartRate_nonumber.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\BackButtonIcon.png">
+      <PackagePath>Assets\Icons\BackButtonIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\BackButtonIconBG.png">
+      <PackagePath>Assets\Icons\BackButtonIconBG.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\GreenIncident.png">
+      <PackagePath>Assets\Icons\GreenIncident.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\LogoIcon.png">
+      <PackagePath>Assets\Icons\LogoIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\LogoIconBG.png">
+      <PackagePath>Assets\Icons\LogoIconBG.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\MainScreenONOFF_Off.png">
+      <PackagePath>Assets\Icons\MainScreenONOFF_Off.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\MainScreenONOFF_On.png">
+      <PackagePath>Assets\Icons\MainScreenONOFF_On.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\MainScreen_HRLabel.png">
+      <PackagePath>Assets\Icons\MainScreen_HRLabel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PersonalProfileIcon.png">
+      <PackagePath>Assets\Icons\PersonalProfileIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PersonalProfileIconBG.png">
+      <PackagePath>Assets\Icons\PersonalProfileIconBG.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPBirthdateArrowIcon.png">
+      <PackagePath>Assets\Icons\PHPBirthdateArrowIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPCancelButtonNew.png">
+      <PackagePath>Assets\Icons\PHPCancelButtonNew.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPIcon1.png">
+      <PackagePath>Assets\Icons\PHPIcon1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPIcon2.png">
+      <PackagePath>Assets\Icons\PHPIcon2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPIcon3.png">
+      <PackagePath>Assets\Icons\PHPIcon3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPIcon4.png">
+      <PackagePath>Assets\Icons\PHPIcon4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPIcon5.png">
+      <PackagePath>Assets\Icons\PHPIcon5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPMenuArrowSelected.png">
+      <PackagePath>Assets\Icons\PHPMenuArrowSelected.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPMenuArrowSelectedV2.png">
+      <PackagePath>Assets\Icons\PHPMenuArrowSelectedV2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPMenuArrowUnselected.png">
+      <PackagePath>Assets\Icons\PHPMenuArrowUnselected.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPSaveButton.png">
+      <PackagePath>Assets\Icons\PHPSaveButton.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\PHPUploadPicture.png">
+      <PackagePath>Assets\Icons\PHPUploadPicture.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RecentIncidentsIcon.png">
+      <PackagePath>Assets\Icons\RecentIncidentsIcon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RecentIncidentsIconBG.png">
+      <PackagePath>Assets\Icons\RecentIncidentsIconBG.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RecentIncidents_DAY.png">
+      <PackagePath>Assets\Icons\RecentIncidents_DAY.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RecentIncidents_DayWeekMonth.png">
+      <PackagePath>Assets\Icons\RecentIncidents_DayWeekMonth.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RecentIncidents_MONTH.png">
+      <PackagePath>Assets\Icons\RecentIncidents_MONTH.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RecentIncidents_WEEK.png">
+      <PackagePath>Assets\Icons\RecentIncidents_WEEK.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Icons\RedIncident.png">
+      <PackagePath>Assets\Icons\RedIncident.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\icon_right_triangle.png">
+      <PackagePath>Assets\icon_right_triangle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_back_button.png">
+      <PackagePath>Assets\ic_back_button.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_back_button_bg.png">
+      <PackagePath>Assets\ic_back_button_bg.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_logo.scale-100.png">
+      <PackagePath>Assets\ic_logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_logo.scale-140.png">
+      <PackagePath>Assets\ic_logo.scale-140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_logo.scale-240.png">
+      <PackagePath>Assets\ic_logo.scale-240.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_logo_bg.png">
+      <PackagePath>Assets\ic_logo_bg.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_logo_bg.scale-240.png">
+      <PackagePath>Assets\ic_logo_bg.scale-240.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_main_screen_on_off_off.png">
+      <PackagePath>Assets\ic_main_screen_on_off_off.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_main_screen_on_off_on.png">
+      <PackagePath>Assets\ic_main_screen_on_off_on.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_personal_profile.png">
+      <PackagePath>Assets\ic_personal_profile.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_personal_profile_icon_bg.png">
+      <PackagePath>Assets\ic_personal_profile_icon_bg.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_1.png">
+      <PackagePath>Assets\ic_php_1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_2.png">
+      <PackagePath>Assets\ic_php_2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_3.png">
+      <PackagePath>Assets\ic_php_3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_4.png">
+      <PackagePath>Assets\ic_php_4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_5.png">
+      <PackagePath>Assets\ic_php_5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_birthdate_arrow.png">
+      <PackagePath>Assets\ic_php_birthdate_arrow.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_btn_cancel.png">
+      <PackagePath>Assets\ic_php_btn_cancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_btn_save.png">
+      <PackagePath>Assets\ic_php_btn_save.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_menu_arrow_selected.png">
+      <PackagePath>Assets\ic_php_menu_arrow_selected.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_menu_arrow_unselected.png">
+      <PackagePath>Assets\ic_php_menu_arrow_unselected.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_php_upload_picture.png">
+      <PackagePath>Assets\ic_php_upload_picture.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_recent_incidents.png">
+      <PackagePath>Assets\ic_recent_incidents.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_recent_incidents_bg.png">
+      <PackagePath>Assets\ic_recent_incidents_bg.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\ic_upload_photo.png">
+      <PackagePath>Assets\ic_upload_photo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SplashScreen.scale-140.png">
+      <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\tab_bar_bg.xml">
+      <PackagePath>Assets\tab_bar_bg.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\Assets\tab_button_bg.xml">
+      <PackagePath>Assets\tab_button_bg.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\Views\AEDLocator.xbf">
+      <PackagePath>Views\AEDLocator.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\Views\CPRInstructions.xbf">
+      <PackagePath>Views\CPRInstructions.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\Views\IncidentLog.xbf">
+      <PackagePath>Views\IncidentLog.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\Views\MainPage.xbf">
+      <PackagePath>Views\MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\Views\Profile_Page.xbf">
+      <PackagePath>Views\Profile_Page.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\HEART.xr.xml">
+      <PackagePath>HEART.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
+      <PackagePath>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AnimatingContainer\AnimatingContainer.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer\AnimatingContainer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AutoCompleteTextBox\AutoCompleteTextBox.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\AutoCompleteTextBox\AutoCompleteTextBox.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CascadingTextBlock\CascadingTextBlock.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CascadingTextBlock\CascadingTextBlock.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CountdownControl\CountdownControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CountdownControl\CountdownControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\FocusVisualizer\FocusVisualizer.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\FocusVisualizer\FocusVisualizer.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ToolStrip\ToolStrip.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ToolStrip\ToolStrip.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ToolWindow\ToolWindow.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\ToolWindow\ToolWindow.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeView.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf">
+      <PackagePath>WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Themes\Generic.xbf">
+      <PackagePath>WinRTXamlToolkit\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Documents\GitHub\Heart_Windows\HEART\HEART\bin\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

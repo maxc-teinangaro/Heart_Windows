@@ -1,0 +1,153 @@
+﻿<Page
+    x:Class="HEART.Views.Profile_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestHeart002"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <Grid Background="#FFFFFFFF">
+        <Grid Background="#FFFFFFFF">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="251*"/>
+                <RowDefinition Height="69*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:ConnectionId='4' x:Name="Name" HorizontalAlignment="Left" Margin="77,85,0,0" TextWrapping="Wrap" Text="Enter Name Here" VerticalAlignment="Top" Width="313" BorderThickness="0,0,0,5" RequestedTheme="Dark" Background="White" Foreground="Black" BorderBrush="Black"                     />
+            <TextBlock HorizontalAlignment="Left" Margin="10,101,0,0" Foreground="Black"
+    			TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" 
+    			FontSize="18" Height="28" Width="62"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,166,0,0" Foreground="Black"
+    			TextWrapping="Wrap" Text="Gender:" VerticalAlignment="Top" 
+    			FontSize="18" Height="28" Width="108"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,231,0,0" Foreground="Black"
+    			TextWrapping="Wrap" Text="DOB:" VerticalAlignment="Top" 
+    			FontSize="18" Height="28" Width="62"/>
+            <DatePicker HorizontalAlignment="Left" Margin="82,210,0,0" VerticalAlignment="Top" Width="109" Foreground="Black"/>
+
+            <Grid Name="gridActivation" Margin="0,240,0,-47.111" Grid.RowSpan="2">
+                <Image Source="ms-appx:///Assets/Icons/PHPIcon5.png" Height="51" 
+            		VerticalAlignment="Center" Margin="-20,238,345,230" RenderTransformOrigin="0.551,3.019"/>
+
+                <Image Name="arrActivation" Source="ms-appx:///Assets/Icons/PHPMenuArrowUnselected.png" Height="40" Width="54"
+            		HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,249,10,230" RenderTransformOrigin="0.551,3.019"/>
+
+                <TextBlock x:ConnectionId='9' HorizontalAlignment="Left" Margin="90,278,0,0" Foreground="Black"
+            		TextWrapping="Wrap" Text="Activation Time" VerticalAlignment="Top" 
+            		FontSize="32" Height="56" Width="310"                           RequestedTheme="Dark"/>
+                <StackPanel x:Name="stackActivationTime"  HorizontalAlignment="Stretch" 
+                            Height="100" Margin="0,334,0,0" VerticalAlignment="Top" 
+                            Background="Gray" Visibility="Collapsed">
+                    <Slider x:ConnectionId='10' x:Name="slideActivationTime" Minimum="0" Maximum="30"                                                 />
+                    <TextBlock x:Name="txtActiveTimeValue" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Center" FontSize="24"/>
+                </StackPanel>
+            </Grid>
+            <Grid Name="gridMessage" Margin="0,180,0,-0.111" Grid.RowSpan="2">
+                <Image Source="ms-appx:///Assets/Icons/PHPIcon4.png" Height="51" 
+            		VerticalAlignment="Center" Margin="-25,238,350,211" RenderTransformOrigin="0.551,3.019"/>
+
+                <Image Name="arrMessage" Source="ms-appx:///Assets/Icons/PHPMenuArrowUnselected.png" Height="40" Width="54"
+            		HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,249,10,248" RenderTransformOrigin="0.551,3.019"/>
+
+                <TextBlock x:ConnectionId='8' HorizontalAlignment="Left" Margin="90,278,0,0" Foreground="Black"
+            		TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" 
+            		FontSize="32" Height="56" Width="310"                           RequestedTheme="Dark"/>
+                <StackPanel x:Name="stackMessage" HorizontalAlignment="Stretch" 
+                            Height="100" Margin="0,334,0,0" VerticalAlignment="Top" 
+                            Background="Gray" Visibility="Collapsed">
+                    <RichEditBox x:Name="rtbMessage" VerticalAlignment="Stretch" Height="74" BorderThickness="5,2.5,5,5" Visibility="Visible" Margin="0"/>
+                </StackPanel>
+
+            </Grid>
+            <Grid Name="gridMedication" Margin="0,120,0,45.889" Grid.RowSpan="2">
+                <Image Source="ms-appx:///Assets/Icons/PHPIcon3.png" Height="51" 
+            		VerticalAlignment="Center" Margin="-20,238,345,248" RenderTransformOrigin="0.551,3.019"/>
+                <Image Name="arrMedication" Source="ms-appx:///Assets/Icons/PHPMenuArrowUnselected.png" Height="40" Width="54"
+            		HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,249,10,248" RenderTransformOrigin="0.551,3.019"/>
+
+                <TextBlock x:ConnectionId='7' HorizontalAlignment="Left" Margin="90,278,0,0" Foreground="Black"
+            		TextWrapping="Wrap" Text="Medication" VerticalAlignment="Top" 
+            		FontSize="32" Height="56" Width="310"                           RequestedTheme="Dark"/>
+                <StackPanel x:Name="stackMedication" HorizontalAlignment="Stretch" 
+                            Height="100" Margin="0,334,0,0" VerticalAlignment="Top" 
+                            Background="Gray" Visibility="Collapsed">
+                    <RichEditBox Margin="0" VerticalAlignment="Stretch" Height="74" BorderThickness="5,2.5,5,5" Visibility="Visible"/>
+                </StackPanel>
+            </Grid>
+            <Grid Name="gridAssistance" Margin="0,60,0,91.889" Grid.RowSpan="2">
+                <Image Source="ms-appx:///Assets/Icons/PHPIcon2.png"  Height="51" 
+            		VerticalAlignment="Center" Margin="-20,238,345,248" RenderTransformOrigin="0.551,3.019"/>
+                <TextBlock x:ConnectionId='6' HorizontalAlignment="Left" Margin="90,278,0,0" Foreground="Black"
+            		TextWrapping="Wrap" Text="Assistance Needed" VerticalAlignment="Top" 
+            		FontSize="32" Height="56" Width="310"                           RequestedTheme="Dark"/>
+
+                <Image Name="arrAssistance" Source="ms-appx:///Assets/Icons/PHPMenuArrowUnselected.png" Height="40" Width="54"
+            		HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,249,10,248" RenderTransformOrigin="0.551,3.019"/>
+
+
+                <StackPanel x:Name="stackAssistNeeded" HorizontalAlignment="Stretch" 
+                            Height="134" Margin="0,334,0,0" VerticalAlignment="Top" 
+                            Background="Gray" Visibility="Collapsed">
+                    <CheckBox x:Name="cbDefib" Content="Defibrulator" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,232,0" Height="60" BorderThickness="1"/>
+                    <CheckBox x:Name="cbCPR" Content="CPR" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,261,0" BorderThickness="1"/>
+                </StackPanel>
+            </Grid>
+            <Grid Name="gridMedicalCondition">
+                <Image Source="ms-appx:///Assets/Icons/PHPIcon1.png" Height="51" 
+            		VerticalAlignment="Center" Margin="-20,238,345,248" RenderTransformOrigin="0.551,3.019"/>
+                <TextBlock x:ConnectionId='5' HorizontalAlignment="Left" Margin="90,278,0,0" Foreground="Black"
+            		TextWrapping="Wrap" Text="Medical Condition" VerticalAlignment="Top" 
+            		FontSize="32" Height="56" Width="310"                           RequestedTheme="Dark"/>
+
+                <Image Name="arrMedicalCondition" Source="ms-appx:///Assets/Icons/PHPMenuArrowUnselected.png" Height="40" Width="54"
+            		HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,249,10,248" RenderTransformOrigin="0.551,3.019"/>
+
+
+                <StackPanel x:Name="stackMedicalCondition" HorizontalAlignment="Stretch" 
+                            Height="100" Margin="0,334,0,0" VerticalAlignment="Top" 
+                            Background="Gray" Visibility="Collapsed">
+                    <RichEditBox Name="editMedical" Margin="0" VerticalAlignment="Stretch" Height="100" BorderThickness="5,2.5,5,5"/>
+                </StackPanel>
+            </Grid>
+
+
+        </Grid>
+
+        <Grid x:Name="TopGrid" Background="Black" HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Top" Margin="0,0,0,618">
+            <TextBlock Text="Profile Page" FontSize="32" HorizontalAlignment="Center" Width="175" Foreground="White" Margin="215,10,10,20"/>
+            <Image Source="ms-appx:///Assets/ic_logo.scale-240.png" Height="66" 
+             HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+
+        <ComboBox x:ConnectionId='1' HorizontalAlignment="Left" Margin="82,145,0,0" VerticalAlignment="Top" Width="242" PlaceholderText="Select from the list" IsSynchronizedWithCurrentItem="False" RequestedTheme="Dark" Height="162" Background="White" Foreground="Black" BorderBrush="Black" BorderThickness="1"                         >
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="Not Specified"/>
+            <DatePicker HorizontalAlignment="Left" Margin="84,0,0,0"/>
+        </ComboBox>
+
+        <Grid x:Name="BottomGrid" Background="Black" Margin="0,720,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="291*"/>
+                <ColumnDefinition Width="109*"/>
+            </Grid.ColumnDefinitions>
+            <!--<Image Source="ms-appx:///Assets/ic_back_button_bg.png" Width="177" Height="64"/>-->
+            <Button x:ConnectionId='2' x:Name="btnSave" Content="Save" Background="Gray" Margin="82,-27,0,-30"                         />
+            <Button x:ConnectionId='3' x:Name="btnCancel" Content="Cancel" Background="Gray" Margin="210,-27,0,-30" Grid.ColumnSpan="2"                            />
+        </Grid>
+    </Grid>
+</Page>
+
+
+
+<!--
+<Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.732,-0.283" Background="Gray" Margin="82,80.333,0,0" Grid.Row="1"/>
+<Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="btnCancel_Tapped" Background="Gray" Margin="216,80.333,0,0" Grid.Row="1"/>
+   
+    -->
+

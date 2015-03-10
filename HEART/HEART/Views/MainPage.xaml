@@ -19,9 +19,8 @@
 
         <Grid Name="TopGrid" Background="Black" HorizontalAlignment="Stretch" 
                   VerticalAlignment="Top" Margin="0,0,0,618">
-            <Image Source="ms-appx:///Assets/ic_personal_profile.png"
+            <Image Name="imgProfile" Source="ms-appx:///Assets/ic_personal_profile.png"
                        Width="59" Height="62"
-             
                        HorizontalAlignment="Right" 
                        Tapped="btnProfile_Tapped"/>
 
@@ -29,36 +28,44 @@
              HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Grid>
 
-        <Grid Name="MidGrid"  HorizontalAlignment="Stretch" VerticalAlignment="Center">
+        <Border Margin="0,-60,0,60">
+            <TextBox IsReadOnly="True" x:Name="blkHeartRate" Margin="10,222,10,0" TextWrapping="Wrap" 
+        		Text="84" VerticalAlignment="Top" HorizontalAlignment="Center"
+        		RenderTransformOrigin="0,0" FontSize="164" TextAlignment="Center" Foreground="Black" 
+        		BorderThickness="0" Height="191" Width="380" />
+        </Border>
+
+        <Grid Name="MidGrid"  HorizontalAlignment="Stretch" Margin="0,55,0,560">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"  />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
             <Image Source="ms-appx:///Assets/al_SleepMode.jpg" 
-             VerticalAlignment="Stretch" HorizontalAlignment="Right" 
-             Width="142" Height="58" />
+              Grid.Column="2"  Grid.Row="0" Tapped="Image_Tapped"
+              />
             <Image Source="ms-appx:///Assets/al_ExerciseMode.jpg" 
-             VerticalAlignment="Stretch" HorizontalAlignment="Left" 
-             Width="138" Height="58" />
+             Grid.Column="0" Grid.Row="0"
+              />
             <Image Source="ms-appx:///Assets/al_NormalMode.jpg"
-             VerticalAlignment="Stretch" HorizontalAlignment="Center" 
-              Width="128" Height="58" />
+             Grid.Column="1" Grid.Row="0" Tapped="Image_Tapped_1"
+                />
         </Grid>
-        
-        
-        <TextBlock  x:Name="blkHeartRate" Margin="99,222,-79,293" TextWrapping="Wrap" 
-            			Text="84" VerticalAlignment="Center" HorizontalAlignment="Center"
-            			RenderTransformOrigin="0,0" FontSize="164" 
-            			SelectionHighlightColor="#FFFFFFFF" Foreground="Black" Height="169" Width="380" />
 
-
-        <TextBlock x:Name="blkAvgHeartBeat" HorizontalAlignment="Center" Margin="96,428,88,0" 
+        <TextBlock x:Name="blkAvgHeartBeat" HorizontalAlignment="Center" Margin="96,368,88,0" 
                    TextWrapping="Wrap" Text="Average Heart Rate: ---" Foreground="Gray"
                    VerticalAlignment="Top" RenderTransformOrigin="0,0" FontSize="20" Width="216"
                    SelectionHighlightColor="#FFFFFFFF" />
 
-        <Grid Name="BottomGrid" Background="Black" Margin="0,618,0,0">
-            <Image Source="ms-appx:///Assets/ic_main_screen_on_off_off.png" 
+        <Grid Name="BottomGrid" Background="Black" Margin="0,720,0,0">
+            <Image Name="imgSwitchDevice" Source="ms-appx:///Assets/ic_main_screen_on_off_off.png" 
                    Margin="0,2,225,0" Tapped="btnSwitchDevice_Tapped"
                    Width="177" Height="64"/>
 
-            <Border BorderThickness="10,0,0,0" BorderBrush="White" HorizontalAlignment="Center" Margin="309,0,-3.222,0" Width="97" Grid.ColumnSpan="3">
+            <Border BorderThickness="10,0,0,0" BorderBrush="White" HorizontalAlignment="Right" Margin="309,0,-3.222,0" Width="97" Grid.ColumnSpan="3">
                 <Image Name="imgIncident" Source="ms-appx:///Assets/ic_recent_incidents.png" Margin="2,0,10.222,0.111" 
                        Width="66" Height="82"
             		Tapped="btnIncidentLog_Tapped"/>
@@ -67,6 +74,79 @@
         </Grid>
 
 
+        <Grid Visibility="Visible"  Name="gridGraph" Background="#7FBBB8B8" HorizontalAlignment="Stretch"   Margin="0,447,0,62" Width="400">
+            <Polyline Name="GraphLine" Stroke="Red" StrokeThickness="3" HorizontalAlignment="Right"/>
+            <!--<Rectangle Grid.Row="2" Grid.RowSpan="3" Grid.Column="3" Grid.ColumnSpan="2" Fill="Aquamarine" >
+                </Rectangle>-->
+        </Grid>
+
+        <Border Name="DelayAlertGrid" Visibility="Collapsed" BorderBrush="Black" Margin="0,-178,0,178">
+            <Grid>
+                <Grid Name="bgFlash" Background="#55FF0000" Margin="0,0,0,-176">
+
+                </Grid>
+                <Grid Background="Red" Margin="0,342,0,300">
+                    <TextBlock Text="ALERT!" HorizontalAlignment="Center" FontSize="32" />
+                </Grid>
+                <Grid Background="White" Margin="0,384,0,179">
+                    <TextBlock Foreground="Black" TextWrapping="Wrap" Text="We have detected a dangerous heart rhythm. Do you require attention?" HorizontalAlignment="Center" FontSize="24" />
+                </Grid>
+                <Button Name="btnCancelAlert"  Foreground="Black" Background="IndianRed"  Content="NO" Margin="147,457,0,141" 
+                        RenderTransformOrigin="0.492,1.509" Height="86" Width="132"
+                        Tapped="btnCancelAlert_Tapped"></Button>
+            </Grid>
+        </Border>
+        <Border Name="EmergencyAlertGrid"  Visibility="Collapsed" BorderBrush="Black" Margin="0,-178,0,178">
+            <Grid Margin="0,10,0,-10.111">
+                <Grid Name="bgAlarmFlash" Background="#55FF0000" Margin="0,0,0,-176">
+
+                </Grid>
+                <Grid Background="Red" Margin="0,342,0,300">
+                    <TextBlock Text="ALERT!" HorizontalAlignment="Center" FontSize="32" />
+                </Grid>
+                <Grid Background="White" Margin="0,384,0,179">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="11*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="Black" TextWrapping="Wrap"
+                     Text="I have a Heart Condition, and am suffering from cardiac arrest. An ambulance is on its way. Please touch the Assist button to help me." HorizontalAlignment="Center" FontSize="24" Margin="3,0,2,-45" Grid.ColumnSpan="2" />
+                </Grid>
+                <Button Name="btnAssist" Foreground="Black" Background="GreenYellow" Content="Assist" Margin="147,457,0,141" 
+                        RenderTransformOrigin="0.492,1.509" Tapped="btnAssist_Tapped" Height="86" Width="132" Click="btnAssist_Click"></Button>
+
+            </Grid>
+        </Border>
+        <Border Name="AssistanceGrid" Visibility="Collapsed" BorderBrush="Black" Margin="0,-178,0,178">
+            <Grid Margin="0,10,0,-10.111">
+                <Grid Background="#55FF0000" Margin="0,0,0,-122" Height="663" VerticalAlignment="Bottom">
+
+                </Grid>
+                <Grid Background="Red" Margin="0,342,0,300">
+                    <TextBlock Text="ASSISTANCE" HorizontalAlignment="Center" FontSize="32" />
+                </Grid>
+                <Grid Background="White" Margin="0,384,0,107">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="11*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Foreground="Black" TextWrapping="Wrap"
+                     Text="Options to Assist:" HorizontalAlignment="Center" FontSize="24" Margin="118,37,9.222,-82" />
+                </Grid>
+                <Button Name="btnCPR" Foreground="Black" Background="GreenYellow" Content="CPR Instructions" Margin="10,428,0,170" 
+                       HorizontalAlignment="Center" RenderTransformOrigin="0.492,1.509" Tapped="btnAssist_Tapped" Height="86" Width="243" Click="btnCPR_Click"></Button>
+
+                <Button Name="btnAED" Foreground="Black" Background="GreenYellow" Content="Find Closest Defibrillator" Margin="10,500,0,98" 
+                        HorizontalAlignment="Center" RenderTransformOrigin="0.492,1.509" Tapped="btnAssist_Tapped" Height="86" Width="243" Click="btnAED_Click"></Button>
+
+                <Button Name="btnExit"  Foreground="Black" Background="IndianRed"  Content="Exit" Margin="148,635,0,-37" 
+                        RenderTransformOrigin="0.492,1.509" Height="86" Width="132" Tapped="btnExit_Tapped"/>
+            </Grid>
+        </Border>
+
+
     </Grid>
+
+
 </Page>
 
